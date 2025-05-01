@@ -31,6 +31,13 @@
   font-weight: 500;
   transition: all 0.3s;
 }
+.link-btn {
+  font-size: 1.2rem;
+  color: var(--grey);
+  font-weight: 500;
+  transition: all 0.3s;
+  
+}
 
 .link:hover {
   color: var(--white);

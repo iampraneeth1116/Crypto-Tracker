@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Drawer from "@mui/material/Drawer";
-import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
+import  MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import { IconButton } from "@mui/material";
 
 export default function TemporaryDrawer() {
@@ -9,7 +9,7 @@ export default function TemporaryDrawer() {
   return (
     <div>
       <IconButton onClick={() => setOpen(true)}>
-        <MenuRoundedIcon className="link" />
+        <MenuRoundedIcon className="links" />
       </IconButton>
       <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
         <div className="drawer-div">
