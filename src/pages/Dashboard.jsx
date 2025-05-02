@@ -42,10 +42,7 @@ function Dashboard() {
     }
   };
 
-  const handleChange = (e) => {
-    setSearch(e.target.value);
-    console.log(e.target.value);
-  };
+
 
   var filteredCoins = coins.filter(
     (coin) =>
@@ -53,12 +50,7 @@ function Dashboard() {
       coin.symbol.toLowerCase().includes(search.trim().toLowerCase())
   );
 
-  const handlePageChange = (event, value) => {
-    setPage(value);
-   
-    var initialCount = (value - 1) * 10;
-    setPaginatedCoins(coins.slice(initialCount, initialCount + 10));
-  };
+
 
   return (
     <>
@@ -71,17 +63,12 @@ function Dashboard() {
         </div>
       ) : (
         <>
-          <Search search={search} handleChange={handleChange} />
+ 
           <TabsComponent
             coins={search ? filteredCoins : paginatedCoins}
             setSearch={setSearch}
           />
-          {!search && (
-            <PaginationComponent
-              page={page}
-              handlePageChange={handlePageChange}
-            />
-          )}
+       
         </>
       )}
       <TopButton />
