@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Common/Header";
 import Loader from "../components/Common/Loader";
+import Search from "../components/Dashboard/Search";
 import TabsComponent from "../components/Dashboard/Tabs";
 import TopButton from "../components/Common/TopButton";
 import Footer from "../components/Common/Footer/footer";
@@ -9,12 +10,10 @@ function Dashboard() {
   const [coins, setCoins] = useState([]);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
-  const [page, setPage] = useState(1);
-  const [paginatedCoins, setPaginatedCoins] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Get 100 Coins
+
     getData();
   }, []);
 
@@ -33,7 +32,7 @@ function Dashboard() {
 
       const data = await response.json();
       setCoins(data);
-      setPaginatedCoins(data.slice(0, 10));
+
     } catch (error) {
       console.error("Error fetching data:", error);
       setError(error.message);
@@ -42,14 +41,16 @@ function Dashboard() {
     }
   };
 
-
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+    console.log(e.target.value);
+  };
 
   var filteredCoins = coins.filter(
     (coin) =>
       coin.name.toLowerCase().includes(search.trim().toLowerCase()) ||
       coin.symbol.toLowerCase().includes(search.trim().toLowerCase())
   );
-
 
 
   return (
@@ -63,12 +64,11 @@ function Dashboard() {
         </div>
       ) : (
         <>
- 
+          <Search search={search} handleChange={handleChange} />
           <TabsComponent
-            coins={search ? filteredCoins : paginatedCoins}
+            coins={filteredCoins}  
             setSearch={setSearch}
           />
-       
         </>
       )}
       <TopButton />
@@ -78,4 +78,3 @@ function Dashboard() {
 }
 
 export default Dashboard;
-

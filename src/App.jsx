@@ -10,7 +10,6 @@ import './App.css';
 
 const Home = lazy(() => import('./pages/Home'));
 const Dashboard = lazy(() => import('./pages/Dashboard'));
-// const Coin = lazy(() => import('./pages/Coin'));
 
 
 const LoadingFallback = () => (
@@ -50,7 +49,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          {/* <Route path="/coin/:id" element={<Coin />} /> */}
+
           
         </Routes>
       </Suspense>

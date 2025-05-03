@@ -1,32 +1,37 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ExpandLessRoundedIcon from "@mui/icons-material/ExpandLessRounded";
+
 function TopButton() {
+  useEffect(() => {
+    const handleScroll = () => {
+      const mybutton = document.getElementById("top-btn");
+      if (!mybutton) return;
+      
+      if (window.scrollY > 500) {
+        mybutton.style.display = "flex";
+      } else {
+        mybutton.style.display = "none";
+      }
+    };
 
-  let mybutton = document.getElementById("top-btn");
+    window.addEventListener("scroll", handleScroll);
+    
 
-  
-  window.onscroll = function () {
-    scrollFunction();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   };
 
-  function scrollFunction() {
-    if (
-      document.body.scrollTop > 500 ||
-      document.documentElement.scrollTop > 500
-    ) {
-      mybutton.style.display = "flex";
-    } else {
-      mybutton.style.display = "none";
-    }
-  }
   return (
     <div
       className="top-btn"
       id="top-btn"
-      onClick={() => {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-      }}
+      onClick={scrollToTop}
     >
       <ExpandLessRoundedIcon />
     </div>
