@@ -16,33 +16,25 @@ function Dashboard() {
   const [paginatedCoins, setPaginatedCoins] = useState([]);
 
   useEffect(() => {
-
     getData();
   }, []);
 
   const getData = async () => {
     setLoading(true);
     setError(null);
-    
     try {
       const response = await fetch(
         "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
       );
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
+      if (!response.ok) throw new Error(response.statusText);
       const data = await response.json();
       setCoins(data);
       setPaginatedCoins(data.slice(0, 10));
-
     } catch (error) {
-      console.error("Error fetching data:", error);
       setError(error.message);
-    } finally {
-      setLoading(false);
+      console.error(error);
     }
+    setLoading(false);
   };
 
   const handleChange = (e) => {
@@ -61,7 +53,6 @@ function Dashboard() {
     var initialCount = (value - 1) * 10;
     setPaginatedCoins(coins.slice(initialCount, initialCount + 10));
   };
-
 
   return (
     <>

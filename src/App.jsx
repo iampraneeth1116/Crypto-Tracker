@@ -10,6 +10,7 @@ import './App.css';
 
 const Home = lazy(() => import('./pages/Home'));
 const Dashboard = lazy(() => import('./pages/Dashboard'));
+const Watchlist = lazy(() => import('./pages/Watchlist'));
 
 
 const LoadingFallback = () => (
@@ -49,6 +50,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/watchlist" element={<Watchlist />} />
 
           
         </Routes>
