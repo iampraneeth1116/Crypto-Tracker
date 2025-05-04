@@ -14,7 +14,7 @@ function List({ coin, delay }) {
   const watchlist = JSON.parse(localStorage.getItem("watchlist"));
   const [isCoinAdded, setIsCoinAdded] = useState(watchlist?.includes(coin.id));
   return (
-    <a href={`/coin/${coin.id}`}>
+    <a >
       <motion.tr
         className="list-row"
         initial={{ opacity: 0, x: -50 }}

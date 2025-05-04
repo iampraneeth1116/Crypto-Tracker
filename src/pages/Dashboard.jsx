@@ -5,12 +5,15 @@ import Search from "../components/Dashboard/Search";
 import TabsComponent from "../components/Dashboard/Tabs";
 import TopButton from "../components/Common/TopButton";
 import Footer from "../components/Common/Footer/footer";
+import PaginationComponent from "../components/Dashboard/Pagination";
 
 function Dashboard() {
   const [coins, setCoins] = useState([]);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
   const [error, setError] = useState(null);
+  const [page, setPage] = useState(1);
+  const [paginatedCoins, setPaginatedCoins] = useState([]);
 
   useEffect(() => {
 
@@ -32,6 +35,7 @@ function Dashboard() {
 
       const data = await response.json();
       setCoins(data);
+      setPaginatedCoins(data.slice(0, 10));
 
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -52,6 +56,12 @@ function Dashboard() {
       coin.symbol.toLowerCase().includes(search.trim().toLowerCase())
   );
 
+  const handlePageChange = (event, value) => {
+    setPage(value);
+    var initialCount = (value - 1) * 10;
+    setPaginatedCoins(coins.slice(initialCount, initialCount + 10));
+  };
+
 
   return (
     <>
@@ -66,9 +76,15 @@ function Dashboard() {
         <>
           <Search search={search} handleChange={handleChange} />
           <TabsComponent
-            coins={filteredCoins}  
+            coins={search ? filteredCoins : paginatedCoins}
             setSearch={setSearch}
           />
+          {!search && (
+            <PaginationComponent
+              page={page}
+              handlePageChange={handlePageChange}
+            />
+          )}
         </>
       )}
       <TopButton />
