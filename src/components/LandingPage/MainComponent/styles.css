@@ -87,7 +87,7 @@
 .gradient {
   position: absolute;
   width: 100%;
-  z-index: 0;
+  /* z-index: 0; */
   filter: blur(100px);
   transform: rotate(-20deg);
   right: 0px;
@@ -96,7 +96,7 @@
 
 .iphone {
   position: relative;
-  z-index: 1;
+  /* z-index: 1; */
   width: 100%;
   pointer-events: none;
   right: 10px;
