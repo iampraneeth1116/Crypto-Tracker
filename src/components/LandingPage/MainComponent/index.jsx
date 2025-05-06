@@ -47,7 +47,7 @@ function MainComponent() {
           <RWebShare
             data={{
               text: "CryptoDashboard made using React JS.",
-              url: "https://crypto-dashboard.com",
+              url: "need to write",
               title: "CryptoTracker.",
             }}
             onClick={() => toast.info("App Shared!")}

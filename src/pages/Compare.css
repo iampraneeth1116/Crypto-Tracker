@@ -1,0 +1,94 @@
+.compare-container {
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--black);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.compare-content {
+  flex: 1;
+  padding-bottom: 2rem;
+}
+
+.compare-wrapper {
+  padding: 1rem 3rem;
+}
+
+.grey-wrapper {
+  width: 90%;
+  background-color: var(--darkgrey);
+  margin: 1.5rem auto;
+  border-radius: 0.8rem;
+  padding: 1rem;
+}
+
+.select-coin-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--darkgrey);
+  padding: 1rem;
+  border-radius: 0.8rem;
+  min-width: 200px;
+}
+
+.add-coin, .remove-coin {
+  color: var(--grey) !important;
+  transition: all 0.3s !important;
+}
+
+.add-coin:hover {
+  color: var(--green) !important;
+  transform: scale(1.1);
+}
+
+.remove-coin:hover {
+  color: var(--red) !important;
+  transform: scale(1.1);
+}
+
+.select-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 800px;
+  flex-wrap: wrap;
+}
+
+.select-coin {
+  min-width: 200px !important;
+  color: var(--white) !important;
+}
+
+.select-coin .MuiOutlinedInput-notchedOutline {
+  border-color: var(--blue) !important;
+}
+
+.select-coin .MuiSelect-icon {
+  color: var(--blue) !important;
+}
+
+.select-coin:hover .MuiOutlinedInput-notchedOutline {
+  border-color: var(--green) !important;
+}
+
+.MuiPaper-root.MuiMenu-paper {
+  background-color: var(--darkgrey) !important;
+  color: var(--white) !important;
+  border: 2px solid var(--blue);
+}
+
+.MuiMenuItem-root {
+  padding: 0.8rem 1.5rem !important;
+  transition: all 0.3s !important;
+}
+
+.MuiMenuItem-root:hover {
+  background-color: var(--blue) !important;
+}
+

@@ -36,6 +36,7 @@
   text-transform: uppercase;
   background: linear-gradient(90deg, var(--blue) 0%, var(--green) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -55,13 +56,11 @@
   font-weight: 600;
   font-size: 1.1rem;
   transition: all 0.3s;
-  border: none;
-  cursor: pointer;
 }
 
 .watchlist-empty a:hover {
   transform: scale(1.05);
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 .watchlist-error {
