@@ -103,7 +103,7 @@ function Compare() {
                       PaperProps: {
                         style: {
                           maxHeight: 500,
-                          backgroundColor: 'var(--darkgrey)',
+                          backgroundColor: "var(--darkgrey)",
                           color: 'var(--white)'
                         }
                       }

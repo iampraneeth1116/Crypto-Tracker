@@ -7,7 +7,7 @@ export default function PaginationComponent({ page, handlePageChange }) {
     <div className="pagination-container">
       <Pagination
         className="pagination-component"
-        count={10}
+        count={30}
         page={page}
         onChange={handlePageChange}
         size="large"

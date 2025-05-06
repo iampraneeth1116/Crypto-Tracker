@@ -1,27 +1,30 @@
+
 .compare-container {
   min-height: 100vh;
   width: 100%;
-  background-color: var(--black);
-  position: relative;
   display: flex;
   flex-direction: column;
+  background-color: var(--black);
 }
 
 .compare-content {
   flex: 1;
-  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
 }
 
-.compare-wrapper {
-  padding: 1rem 3rem;
-}
 
-.grey-wrapper {
+.select-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
   width: 90%;
-  background-color: var(--darkgrey);
-  margin: 1.5rem auto;
-  border-radius: 0.8rem;
-  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .select-coin-container {
@@ -29,10 +32,32 @@
   align-items: center;
   gap: 1rem;
   background-color: var(--darkgrey);
-  padding: 1rem;
-  border-radius: 0.8rem;
-  min-width: 200px;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  min-width: 250px;
+  transition: all 0.3s;
 }
+
+.select-coin-container:hover {
+  background-color: var(--darkgrey);
+  transform: scale(1.02);
+}
+
+
+.select-coin {
+  color: var(--white) !important;
+  font-size: 1rem !important;
+  min-width: 200px !important;
+}
+
+.select-coin .MuiOutlinedInput-notchedOutline {
+  border-color: var(--blue) !important;
+}
+
+.select-coin:hover .MuiOutlinedInput-notchedOutline {
+  border-color: var(--green) !important;
+}
+
 
 .add-coin, .remove-coin {
   color: var(--grey) !important;
@@ -49,33 +74,6 @@
   transform: scale(1.1);
 }
 
-.select-flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  margin: 2rem auto;
-  width: 90%;
-  max-width: 800px;
-  flex-wrap: wrap;
-}
-
-.select-coin {
-  min-width: 200px !important;
-  color: var(--white) !important;
-}
-
-.select-coin .MuiOutlinedInput-notchedOutline {
-  border-color: var(--blue) !important;
-}
-
-.select-coin .MuiSelect-icon {
-  color: var(--blue) !important;
-}
-
-.select-coin:hover .MuiOutlinedInput-notchedOutline {
-  border-color: var(--green) !important;
-}
 
 .MuiPaper-root.MuiMenu-paper {
   background-color: var(--darkgrey) !important;
@@ -84,11 +82,27 @@
 }
 
 .MuiMenuItem-root {
+  font-size: 0.9rem !important;
   padding: 0.8rem 1.5rem !important;
-  transition: all 0.3s !important;
 }
 
 .MuiMenuItem-root:hover {
   background-color: var(--blue) !important;
 }
 
+
+.compare-wrapper {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.grey-wrapper {
+  background-color: var(--darkgrey);
+  border-radius: 0.8rem;
+  padding: 1.5rem;
+  transition: all 0.3s;
+}
