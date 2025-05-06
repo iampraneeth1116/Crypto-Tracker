@@ -25,6 +25,14 @@
   gap: 2rem;
 }
 
+  .link-btn{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+  }
+
+
 .link {
   font-size: 1rem;
   color: var(--grey);
@@ -48,6 +56,52 @@
 }
 
 
+.drawer-div {
+  width: 250px;
+  background-color: var(--darkgrey);
+  height: 100vh;
+  padding: 2rem 1.5rem;
+}
+
+.drawer-div a {
+  text-decoration: none;
+}
+
+.link {
+  color: var(--grey);
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.link:hover {
+  color: var(--white);
+  background-color: rgba(58, 128, 233, 0.1);
+  transform: scale(1.02);
+}
+
+.link.active {
+  color: var(--blue);
+  background-color: rgba(58, 128, 233, 0.1);
+}
+
+.menu-icon {
+  color: var(--grey);
+  font-size: 2rem !important;
+  transition: all 0.3s ease;
+}
+
+.menu-icon:hover {
+  color: var(--white);
+  transform: scale(1.1);
+}
+
 @media (max-width: 800px) {
   .header {
     padding: 1rem;
@@ -64,8 +118,17 @@
   .header h1 {
     font-size: 1.2rem;
   }
-}
 
+  .drawer-div {
+    width: 200px;
+    padding: 1.5rem 1rem;
+  }
+
+  .link {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+}
 
 @media (max-width: 480px) {
   .header {

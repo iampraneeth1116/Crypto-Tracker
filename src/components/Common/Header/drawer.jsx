@@ -9,7 +9,7 @@ export default function TemporaryDrawer() {
   return (
     <div>
       <IconButton onClick={() => setOpen(true)}>
-        <MenuRoundedIcon className="links" />
+        <MenuRoundedIcon className="link-btn" />
       </IconButton>
       <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
         <div className="drawer-div">
