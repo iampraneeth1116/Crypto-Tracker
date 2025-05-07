@@ -70,29 +70,17 @@ function List({ coin, delay }) {
         title="Coin Price Percentage In 24hrs"
         placement="bottom-start"
       >
-        {isPriceUp ? (
-          <td>
-            <div className="chip-flex">
-              <div className={`price-chip ${!isPriceUp && "red"}`}>
-                {safePrice.toFixed(2)}%
-              </div>
-              <div className="chip-icon td-chip-icon">
-                <TrendingUpRoundedIcon />
-              </div>
+      <td>
+          <div className="chip-flex">
+            <div className={`price-chip ${!isPriceUp && "red"}`}>
+              {safePrice.toFixed(2)}%
             </div>
-          </td>
-        ) : (
-          <td>
-            <div className="chip-flex">
-              <div className={`price-chip ${!isPriceUp && "red"}`}>
-                {safePrice.toFixed(2)}%
-              </div>
-              <div className="chip-icon td-chip-icon red">
-                <TrendingDownRoundedIcon />
-              </div>
+            <div className={`chip-icon td-chip-icon ${!isPriceUp && "red"}`}>
+            {isPriceUp ? <TrendingUpRoundedIcon /> : <TrendingDownRoundedIcon />}
             </div>
-          </td>
-        )}
+          </div>
+        </td>
+       
       </Tooltip>
       <Tooltip title="Coin Price In USD" placement="bottom-end">
         {coin.price_change_percentage_24h >= 0 ? (

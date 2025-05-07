@@ -8,12 +8,8 @@
   border-radius: 0.75rem;
   background: linear-gradient(
     90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(31, 83, 198, 1) 0%,
     rgba(0, 212, 255, 1) 100%
   );
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
 }
 
 .footer h2 {
@@ -29,25 +25,14 @@
 
 .social-link {
   color: var(--white);
-  font-size: 2rem !important;
-  transition: all 0.2s ease-in-out !important;
+  font-size: 2rem;
+  transition: all 0.2s ease-in-out;
 }
 
 .social-link:hover {
   transform: scale(1.2);
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
 
 @media only screen and (max-width: 800px) {
   .footer {
@@ -64,6 +49,6 @@
   }
   
   .social-link {
-    font-size: 1.5rem !important; 
+    font-size: 1.5rem; 
   }
 }

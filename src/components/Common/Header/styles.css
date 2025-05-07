@@ -25,47 +25,17 @@
   gap: 2rem;
 }
 
-  .link-btn{
+.link-btn {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: 2rem;
-  }
-
-
-.link {
-  font-size: 1rem;
-  color: var(--grey);
-  font-weight: 500;
-  transition: all 0.3s;
-}
-.link-btn {
   font-size: 1.2rem;
   color: var(--grey);
   font-weight: 500;
   transition: all 0.3s;
-  
 }
 
-.link:hover {
-  color: var(--white);
-}
-
-.drawer-component {
-  display: none;
-}
-
-
-.drawer-div {
-  width: 250px;
-  background-color: var(--darkgrey);
-  height: 100vh;
-  padding: 2rem 1.5rem;
-}
-
-.drawer-div a {
-  text-decoration: none;
-}
 
 .link {
   color: var(--grey);
@@ -89,6 +59,21 @@
 .link.active {
   color: var(--blue);
   background-color: rgba(58, 128, 233, 0.1);
+}
+
+.drawer-component {
+  display: none;
+}
+
+.drawer-div {
+  width: 250px;
+  background-color: var(--darkgrey);
+  height: 100vh;
+  padding: 2rem 1.5rem;
+}
+
+.drawer-div a {
+  text-decoration: none;
 }
 
 .menu-icon {

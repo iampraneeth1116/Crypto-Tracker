@@ -35,7 +35,7 @@ export default function TabsComponent({ coins, setSearch }) {
         <table className="list-flex">
           {coins.length > 0 ? (
             coins.map((coin, i) => (
-              <List coin={coin} key={i} delay={(i % 8) * 0.2} />
+              <List coin={coin} key={i} delay={0.2} />
             ))
           ) : (
             <div>

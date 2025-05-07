@@ -7,8 +7,10 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 
 function Footer() {
   function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' 
+    });
   }
   return (
     <div className="footer">
@@ -33,6 +35,4 @@ function Footer() {
   );
 }
 
-
 export default Footer;
-//line 22

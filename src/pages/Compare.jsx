@@ -8,6 +8,7 @@ import AddCircleOutlineRoundedIcon from "@mui/icons-material/AddCircleOutlineRou
 import RemoveCircleOutlineRoundedIcon from "@mui/icons-material/RemoveCircleOutlineRounded";
 import "./Compare.css";
 
+
 function Compare() {
   const [allCoins, setAllCoins] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -24,31 +25,17 @@ function Compare() {
   const getData = async () => {
     setLoading(true);
     try {
-      const response1 = await fetch(
+      const response = await fetch(
         "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
       );
-      const data1 = await response1.json();
-      
-      const response2 = await fetch(
-        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=2&sparkline=false"
-      );
-      const data2 = await response2.json();
-      
-      const response3 = await fetch(
-        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=3&sparkline=false"
-      );
-      const data3 = await response3.json();
-      
+      const data = await response.json();
 
-      const allCoinsData = [...data1, ...data2, ...data3];
-      
 
-      const sortedCoins = allCoinsData.sort((a, b) => 
+      const sortedCoins = data.sort((a, b) => 
         a.name.localeCompare(b.name)
       );
       
       setAllCoins(sortedCoins);
-      
 
       const updatedCoins = selectedCoins.map(coin => ({
         ...coin,
@@ -84,6 +71,17 @@ function Compare() {
     }
   };
 
+
+  const menuStyles = {
+    PaperProps: {
+      style: {
+        maxHeight: 500,
+        backgroundColor: "var(--darkgrey)",
+        color: 'var(--white)'
+      }
+    }
+  };
+  
   return (
     <div className="compare-container">
       <Header />
@@ -99,15 +97,7 @@ function Compare() {
                     value={coin.id}
                     onChange={(e) => handleCoinChange(e, index)}
                     className="select-coin"
-                    MenuProps={{
-                      PaperProps: {
-                        style: {
-                          maxHeight: 500,
-                          backgroundColor: "var(--darkgrey)",
-                          color: 'var(--white)'
-                        }
-                      }
-                    }}
+                    MenuProps={menuStyles}
                   >
                     {allCoins.map((c) => (
                       <MenuItem key={c.id} value={c.id}>

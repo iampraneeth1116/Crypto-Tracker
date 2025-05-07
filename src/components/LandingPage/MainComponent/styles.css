@@ -3,19 +3,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 3rem;
-  min-height: calc(100vh - 70px); /* Adjust for footer height */
+  min-height: calc(100vh - 70px); 
   position: relative;
 }
 
-.main-flex.light {
-  background-color: #ffffff;
-  color: #121212;
-}
-
-.main-flex.dark {
-  background-color: #121212;
-  color: #ffffff;
-}
 
 .info-landing {
   display: flex;
@@ -27,14 +18,13 @@
 .heading1 {
   font-size: 6.5rem;
   font-weight: 800;
-  color: var(--white);
   margin: 0;
   line-height: 1.1;
   background: linear-gradient(to right, #3a80e9, #61c96f);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: all 0.3s ease;
+  transition: all 0.3s;
 }
 
 .heading2 {
@@ -42,32 +32,27 @@
   font-weight: 800;
   margin: 0;
   line-height: 1.1;
-  background: linear-gradient(to right, var(--white),var(--white));
+  background: linear-gradient(to right, var(--white), var(--white));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0px 0px 20px rgba(46, 204, 113, 0.2);
-  transition: all 0.3s ease;
 }
 
 .info-text {
   font-size: 1.2rem;
   color: var(--grey);
   line-height: 1.8;
-  font-weight: 400;
   margin: 1.5rem 0;
   max-width: 600px;
   opacity: 0.8;
-  transition: all 0.3s ease;
 }
 
 .heading1:hover {
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: var(--white);
   color: var(--black);
-  transition: all 0.3s;
 }
-
 
 .btn-flex {
   display: flex;
@@ -87,21 +72,18 @@
 .gradient {
   position: absolute;
   width: 100%;
-  /* z-index: 0; */
   filter: blur(100px);
   transform: rotate(-20deg);
-  right: 0px;
+  right: 0;
   top: 80px;
 }
 
 .iphone {
   position: relative;
-  /* z-index: 1; */
   width: 100%;
   pointer-events: none;
   right: 10px;
 }
-
 
 @media screen and (max-width: 1200px) {
   .heading1, .heading2 {

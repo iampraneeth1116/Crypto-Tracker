@@ -23,28 +23,14 @@ function Dashboard() {
     setLoading(true);
     setError(null);
     try {
-      const response1 = await fetch(
+      const response = await fetch(
         "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
       );
-      if (!response1.ok) throw new Error(response1.statusText);
-      const data1 = await response1.json();
+      if (!response.ok) throw new Error(response.statusText);
+      const data = await response.json();
 
-      const response2 = await fetch(
-        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=2&sparkline=false"
-      );
-      if (!response2.ok) throw new Error(response2.statusText);
-      const data2 = await response2.json();
-
-      const response3 = await fetch(
-        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=3&sparkline=false"
-      );
-      if (!response3.ok) throw new Error(response3.statusText);
-      const data3 = await response3.json();
-
-
-      const allCoins = [...data1, ...data2, ...data3];
-      setCoins(allCoins);
-      setPaginatedCoins(allCoins.slice(0, 10));
+      setCoins(data);
+      setPaginatedCoins(data.slice(0, 10));
     } catch (error) {
       setError(error.message);
       console.error(error);
@@ -89,7 +75,7 @@ function Dashboard() {
             <PaginationComponent
               page={page}
               handlePageChange={handlePageChange}
-              count={Math.ceil(coins.length / 10)} // This will give us 30 pages
+              count={Math.ceil(coins.length / 10)} 
             />
           )}
         </>

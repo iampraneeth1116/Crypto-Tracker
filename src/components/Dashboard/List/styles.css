@@ -45,29 +45,6 @@
 }
 
 
-
-.grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  width: 250px;
-  padding: 2rem;
-  background-color: var(--darkgrey);
-  border-radius: 0.8rem;
-  border: 2px solid var(--darkgrey);
-  cursor: pointer;
-}
-
-.grid:hover {
-  border: 2px solid var(--green);
-  transition: all 0.3s;
-}
-
-.grid-red:hover {
-  border: 2px solid var(--red);
-  transition: all 0.3s;
-}
-
 .img-flex {
   display: flex;
   justify-content: flex-start;

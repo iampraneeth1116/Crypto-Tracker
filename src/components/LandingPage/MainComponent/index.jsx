@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { RWebShare } from "react-web-share";
 import Button from "../../Common/Button";
-import Footer from "../../Common/Footer/footer";
 import gradient from "../../../assets/gradient.png";
 import iphone from "../../../assets/iphone.png";
 import "./styles.css";
