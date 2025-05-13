@@ -45,6 +45,7 @@
 }
 
 
+
 .img-flex {
   display: flex;
   justify-content: flex-start;
@@ -157,3 +158,91 @@
   color: var(--red) !important;
 }
 
+
+@media only screen and (max-width: 1200px) {
+  .list-row {
+    width: 95%;
+    padding: 1rem 1.5rem;
+  }
+
+  .td-totalVolume {
+    font-size: 0.9rem;
+  }
+
+  .coin-image {
+    height: 2.8rem;
+    width: 2.8rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .td-chip-icon {
+    display: none;
+  }
+
+  .list-row td {
+    font-size: 0.7rem;
+  }
+
+  .td-totalVolume {
+    display: none;
+  }
+
+  .td-current-price {
+    text-align: center !important;
+  }
+
+  .list-row {
+    width: 100%;
+    padding: 1rem 0.5rem;
+  }
+
+  .coin-image-td {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+
+  .td-info {
+    width: 6rem !important;
+  }
+
+ 
+}
+
+@media only screen and (max-width: 480px) {
+  .td-marketCap,
+  .td-chip-icon {
+    display: none !important;
+  }
+
+  .mobile {
+    display: block !important;
+    text-align: left !important;
+  }
+
+  .list-row td,
+  .td-p {
+    font-size: 0.6rem !important;
+  }
+
+  .td-info {
+    width: 4rem !important;
+  }
+
+  .coin-image-td {
+    height: 2rem !important;
+    width: 2rem !important;
+  }
+
+
+  .price-chip {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .watchlist-icon {
+    padding: 0.3rem;
+    height: 1.2rem;
+    width: 1.2rem !important;
+  }
+}

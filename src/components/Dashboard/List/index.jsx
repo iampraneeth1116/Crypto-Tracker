@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./styles.css";
 import TrendingDownRoundedIcon from "@mui/icons-material/TrendingDownRounded";
 import TrendingUpRoundedIcon from "@mui/icons-material/TrendingUpRounded";
+import { convertNumber } from "../../../functions/convertNumber";
 import { motion } from "framer-motion";
 import { Tooltip } from "@mui/material";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
@@ -69,17 +70,29 @@ function List({ coin, delay }) {
         title="Coin Price Percentage In 24hrs"
         placement="bottom-start"
       >
-      <td>
-          <div className="chip-flex">
-            <div className={`price-chip ${!isPriceUp && "red"}`}>
-              {safePrice.toFixed(2)}%
+        {isPriceUp ? (
+          <td>
+            <div className="chip-flex">
+              <div className={`price-chip ${!isPriceUp && "red"}`}>
+                {safePrice.toFixed(2)}%
+              </div>
+              <div className="chip-icon td-chip-icon">
+                <TrendingUpRoundedIcon />
+              </div>
             </div>
-            <div className={`chip-icon td-chip-icon ${!isPriceUp && "red"}`}>
-            {isPriceUp ? <TrendingUpRoundedIcon /> : <TrendingDownRoundedIcon />}
+          </td>
+        ) : (
+          <td>
+            <div className="chip-flex">
+              <div className={`price-chip ${!isPriceUp && "red"}`}>
+                {safePrice.toFixed(2)}%
+              </div>
+              <div className="chip-icon td-chip-icon red">
+                <TrendingDownRoundedIcon />
+              </div>
             </div>
-          </div>
-        </td>
-       
+          </td>
+        )}
       </Tooltip>
       <Tooltip title="Coin Price In USD" placement="bottom-end">
         {coin.price_change_percentage_24h >= 0 ? (
@@ -102,7 +115,7 @@ function List({ coin, delay }) {
           ${safeMarketCap.toLocaleString()}
         </td>
       </Tooltip>
-      <td className="coin-name mobile">${(safeMarketCap)}</td>
+      <td className="coin-name mobile">${convertNumber(safeMarketCap)}</td>
       <td
         className={`watchlist-icon ${
           safePrice < 0 && "watchlist-icon-red"
