@@ -1,4 +1,3 @@
-
 .compare-container {
   min-height: 100vh;
   width: 100%;
@@ -105,4 +104,88 @@
   border-radius: 0.8rem;
   padding: 1.5rem;
   transition: all 0.3s;
+}
+
+@media screen and (max-width: 1400px) {
+  .select-flex {
+    width: 95%;
+    gap: 1.5rem;
+  }
+
+  .compare-wrapper {
+    width: 95%;
+    gap: 1.2rem;
+  }
+
+  .grey-wrapper {
+    padding: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .compare-content {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .select-flex {
+    width: 98%;
+    gap: 1rem;
+  }
+
+  .select-coin-container {
+    padding: 0.8rem 1rem;
+    min-width: 200px;
+  }
+
+  .select-coin {
+    font-size: 0.9rem !important;
+    min-width: 160px !important;
+  }
+
+  .compare-wrapper {
+    width: 98%;
+    gap: 1rem;
+  }
+
+  .grey-wrapper {
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .compare-content {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .select-flex {
+    width: 100%;
+    gap: 0.8rem;
+  }
+
+  .select-coin-container {
+    padding: 0.5rem 0.8rem;
+    min-width: 150px;
+  }
+
+  .select-coin {
+    font-size: 0.8rem !important;
+    min-width: 120px !important;
+  }
+
+  .compare-wrapper {
+    width: 100%;
+    gap: 0.8rem;
+  }
+
+  .grey-wrapper {
+    padding: 0.8rem;
+    border-radius: 0.6rem;
+  }
+
+  .MuiMenuItem-root {
+    font-size: 0.8rem !important;
+    padding: 0.6rem 1rem !important;
+  }
 }
