@@ -96,6 +96,21 @@
   font-size: 1rem;
 }
 
+.browse-link {
+  text-decoration: none;
+  color: var(--blue);
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--blue);
+  border-radius: 3rem;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.browse-link:hover {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
 @media screen and (max-width: 1400px) {
   .watchlist-empty {
     width: 95%;

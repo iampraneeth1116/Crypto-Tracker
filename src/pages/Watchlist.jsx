@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom"; // Add this import
 import Header from "../components/Common/Header";
 import TabsComponent from "../components/Dashboard/Tabs";
 import Loader from "../components/Common/Loader";
@@ -47,7 +48,7 @@ function WatchlistView() {
           <div className="watchlist-empty">
             <h1>Your Watchlist is Empty</h1>
             <p>Start tracking your favorite cryptocurrencies by adding them to your watchlist.</p>
-            <a href="/dashboard">Browse Coins</a>
+            <Link to="/dashboard" className="browse-link">Browse Coins</Link>
           </div>
         ) : (
           <TabsComponent coins={coins} />
