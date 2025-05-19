@@ -49,7 +49,7 @@ function MainComponent() {
             <RWebShare
               data={{
                 text: "CryptoDashboard made using React JS.",
-                url: "need to write",
+                url: "https://crypto-tracker-omega-rouge.vercel.app/",
                 title: "CryptoTracker.",
               }}
             >
