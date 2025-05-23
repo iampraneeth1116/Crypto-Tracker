@@ -18,16 +18,16 @@ function Footer() {
         CryptoTracker<span>.</span>
       </h2>
       <div className="social-links">
-        <a href="https://facebook.com">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
           <FacebookIcon className="social-link" />
         </a>
-        <a href="mailto:iampraneeth1116@gmail.com"> 
+        <a href="mailto:iampraneeth1116@gmail.com">
           <EmailIcon className="social-link" />
         </a>
-        <a href="https://www.twitter.com">
+        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
           <TwitterIcon className="social-link" />
         </a>
-        <a href="https://www.instagram.com">
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
           <InstagramIcon className="social-link" />
         </a>
       </div>

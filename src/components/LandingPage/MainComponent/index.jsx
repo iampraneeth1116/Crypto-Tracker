@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { RWebShare } from "react-web-share";
+import { Link } from "react-router-dom";
 import Button from "../../Common/Button";
 import gradient from "../../../assets/gradient.png";
 import iphone from "../../../assets/iphone.png";

@@ -28,7 +28,7 @@ const App = () => {
   const { cursorRef, cursorPointerRef } = useCursor();
   const location = useLocation();
 
-  console.log('Current path:', location.pathname); 
+  console.log('Current path:', location.pathname); // Add this for debugging
 
   return (
     <Box className="App" component="main">
