@@ -22,7 +22,7 @@ function List({ coin, delay }) {
     }
   });
 
-  // Safe value extraction with nullish coalescing
+
   const safePrice = coin?.price_change_percentage_24h ?? 0;
   const isPriceUp = safePrice >= 0;
   const safeTotalVolume = coin?.total_volume ?? 0;
