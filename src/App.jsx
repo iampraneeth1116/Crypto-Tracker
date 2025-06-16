@@ -1,9 +1,9 @@
 import { Suspense, lazy } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import Box from '@mui/material/Box';
 import CircularProgress from '@mui/material/CircularProgress';
-import { useCursor } from './hooks/useCursor';
+import { AuthProvider, useAuth } from './context/AuthContext';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 
@@ -11,49 +11,54 @@ const Home = lazy(() => import('./pages/Home'));
 const Dashboard = lazy(() => import('./pages/Dashboard'));
 const Watchlist = lazy(() => import('./pages/Watchlist'));
 const Compare = lazy(() => import('./pages/Compare'));
+const Login = lazy(() => import('./components/Firebase/login'));
+const Register = lazy(() => import('./components/Firebase/register'));
+const Profile = lazy(() => import('./components/Firebase/profile'));
 
 const LoadingFallback = () => (
-  <Box
-    display="flex"
-    justifyContent="center"
-    alignItems="center"
-    minHeight="100vh"
-    data-testid="loading-spinner"
-  >
+  <Box display="flex" justifyContent="center" alignItems="center" minHeight="100vh">
     <CircularProgress />
   </Box>
 );
 
 const App = () => {
-  const { cursorRef, cursorPointerRef } = useCursor();
-  const location = useLocation();
+  const { user, loading } = useAuth();
 
-  console.log('Current path:', location.pathname);
+  if (loading) {
+    return <LoadingFallback />;
+  }
+
   return (
     <Box className="App" component="main">
-      <div className="cursor" ref={cursorRef} />
-      <div className="cursor-pointer" ref={cursorPointerRef} />
-      <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop
-        closeOnClick
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
+      <ToastContainer />
       <Suspense fallback={<LoadingFallback />}>
         <Routes>
-          <Route path="/" element={<Home />} exact />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/dashboard" element={<Dashboard/>} />
           <Route path="/watchlist" element={<Watchlist />} />
           <Route path="/compare" element={<Compare />} />
+          <Route
+            path="/login"
+            element={user ? <Navigate to="/dashboard" /> : <Login />}
+          />
+          <Route
+            path="/register"
+            element={user ? <Navigate to="/dashboard" /> : <Register />}
+          />
+          <Route
+            path="/profile"
+            element={user ? <Profile /> : <Navigate to="/login" />}
+          />
         </Routes>
       </Suspense>
     </Box>
   );
 };
 
-export default App;
+const AppWrapper = () => (
+  <AuthProvider>
+    <App />
+  </AuthProvider>
+);
+
+export default AppWrapper;

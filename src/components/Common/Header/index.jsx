@@ -29,6 +29,9 @@ function Header() {
         <Link to="/dashboard">
           <Button text="Dashboard" />
         </Link>
+        <Link to="/login">
+        <Button text="Login" outlined={true} />
+      </Link>
       </div>
       <div className="drawer-component">
         <TemporaryDrawer />
