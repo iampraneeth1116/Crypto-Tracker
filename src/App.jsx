@@ -12,8 +12,8 @@ const Dashboard = lazy(() => import('./pages/Dashboard'));
 const Watchlist = lazy(() => import('./pages/Watchlist'));
 const Compare = lazy(() => import('./pages/Compare'));
 const Login = lazy(() => import('./components/Firebase/login'));
-const Register = lazy(() => import('./components/Firebase/register'));
-const Profile = lazy(() => import('./components/Firebase/profile'));
+// const Register = lazy(() => import('./components/Firebase/register'));
+// const Profile = lazy(() => import('./components/Firebase/profile'));
 
 const LoadingFallback = () => (
   <Box display="flex" justifyContent="center" alignItems="center" minHeight="100vh">
@@ -41,14 +41,14 @@ const App = () => {
             path="/login"
             element={user ? <Navigate to="/dashboard" /> : <Login />}
           />
-          <Route
+          {/* <Route
             path="/register"
             element={user ? <Navigate to="/dashboard" /> : <Register />}
           />
           <Route
             path="/profile"
             element={user ? <Profile /> : <Navigate to="/login" />}
-          />
+          /> */}
         </Routes>
       </Suspense>
     </Box>
