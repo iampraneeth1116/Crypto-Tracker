@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useAuth } from '../../../context/AuthContext';
+import { useAuth } from "../../../context/AuthContext";
 import Drawer from "@mui/material/Drawer";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
-import { IconButton } from "@mui/material";
-import "./styles.css";
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
+import { IconButton, Avatar } from "@mui/material";
+import PersonIcon from "@mui/icons-material/Person";
+import "./TemporaryDrawer.css";
 
 export default function TemporaryDrawer() {
   const [open, setOpen] = useState(false);
@@ -14,35 +16,48 @@ export default function TemporaryDrawer() {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <div>
-      <IconButton onClick={() => setOpen(true)}>
-        <MenuRoundedIcon className="link-btn" />
+    <div className="drawer-container">
+      <IconButton onClick={() => setOpen(true)} className="menu-button">
+        <MenuRoundedIcon className="icon-white" />
       </IconButton>
-      <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
-        <div className="drawer-div">
-          <Link to="/" style={{ textDecoration: 'none' }}>
-            <p className={`link ${isActive('/') ? 'active' : ''}`}>Home</p>
-          </Link>
-          <Link to="/compare" style={{ textDecoration: 'none' }}>
-            <p className={`link ${isActive('/compare') ? 'active' : ''}`}>Compare</p>
-          </Link>
+
+      <Drawer
+        anchor="right"
+        open={open}
+        onClose={() => setOpen(false)}
+        classes={{ paper: "drawer-paper" }}
+      >
+        <div className="drawer-content">
+          <div className="drawer-header">
+            <IconButton onClick={() => setOpen(false)} className="icon-white close-button">
+              <CloseRoundedIcon className="icon-white" />
+            </IconButton>
+          </div>
+
           {user && (
-            <Link to="/watchlist" style={{ textDecoration: 'none' }}>
-              <p className={`link ${isActive('/watchlist') ? 'active' : ''}`}>Watchlist</p>
-            </Link>
+            <div className="drawer-user">
+               <Avatar className="drawer-avatar ">
+           <PersonIcon sx={{ fontSize: 30 }} />
+        </Avatar>
+              <span className="drawer-username">
+                {user.email?.split("@")[0] || "User"}
+              </span>
+            </div>
           )}
-          <Link to="/dashboard" style={{ textDecoration: 'none' }}>
-            <p className={`link ${isActive('/dashboard') ? 'active' : ''}`}>Dashboard</p>
-          </Link>
-          {!user ? (
-            <Link to="/login" style={{ textDecoration: 'none' }}>
-              <p className={`link ${isActive('/login') ? 'active' : ''}`}>Login</p>
-            </Link>
-          ) : (
-            <Link to="/profile" style={{ textDecoration: 'none' }}>
-              <p className={`link ${isActive('/profile') ? 'active' : ''}`}>Profile</p>
-            </Link>
-          )}
+
+          <nav className="drawer-links">
+            <Link to="/" className={`drawer-link ${isActive("/") ? "active" : ""}`}>Home</Link>
+            <Link to="/compare" className={`drawer-link ${isActive("/compare") ? "active" : ""}`}>Compare</Link>
+            {user && (
+              <Link to="/watchlist" className={`drawer-link ${isActive("/watchlist") ? "active" : ""}`}>Watchlist</Link>
+            )}
+            <Link to="/dashboard" className={`drawer-link ${isActive("/dashboard") ? "active" : ""}`}>Dashboard</Link>
+            {!user ? (
+              <Link to="/login" className={`drawer-link ${isActive("/login") ? "active" : ""}`}>Login</Link>
+            ) : (
+              <Link to="/profile" className={`drawer-link ${isActive("/profile") ? "active" : ""}`}>Profile</Link>
+            )}
+          </nav>
         </div>
       </Drawer>
     </div>

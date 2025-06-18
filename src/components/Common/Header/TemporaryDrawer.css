@@ -1,0 +1,62 @@
+.drawer-container {
+  display: flex;
+  align-items: center;
+}
+
+.drawer-paper {
+  background-color: #121212;
+  color: white;
+  width: 260px;
+}
+
+.drawer-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icon-white {
+  color: white;
+}
+
+.drawer-user {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.drawer-avatar {
+  background-color: #1976d2;
+  margin-right: 10px;
+}
+
+.drawer-username {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.drawer-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-link {
+  text-decoration: none;
+  color: white;
+  padding: 10px 0;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.drawer-link:hover,
+.drawer-link.active {
+  color: #64b5f6;
+  font-weight: bold;
+}
+

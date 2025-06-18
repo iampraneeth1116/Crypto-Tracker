@@ -88,7 +88,7 @@
   text-decoration: underline;
 }
 
-/* Error states */
+
 .form-field.error input {
   border-color: #f44336;
 }
@@ -99,7 +99,7 @@
   margin-top: 4px;
 }
 
-/* Loading state */
+
 .login-button:disabled {
   background-color: #90caf9;
   cursor: not-allowed;

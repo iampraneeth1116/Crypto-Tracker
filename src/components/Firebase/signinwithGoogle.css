@@ -64,8 +64,8 @@
   }
 }
 
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
+
+/* @media (prefers-color-scheme: dark) {
   .google-sign-in-button {
     background-color: #2d2d2d;
     border-color: rgba(255, 255, 255, 0.12);
@@ -87,9 +87,9 @@
     border-color: #404040;
     border-top-color: #4285f4;
   }
-}
+} */
 
-/* Mobile optimization */
+
 @media (max-width: 480px) {
   .google-sign-in-button {
     height: 44px;
