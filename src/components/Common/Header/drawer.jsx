@@ -17,7 +17,7 @@ export default function TemporaryDrawer() {
 
   return (
     <div className="drawer-container">
-      <IconButton onClick={() => setOpen(true)} className="menu-button">
+      <IconButton onClick={() => setOpen(true)}  className="icon-white">
         <MenuRoundedIcon className="icon-white" />
       </IconButton>
 
@@ -48,9 +48,9 @@ export default function TemporaryDrawer() {
           <nav className="drawer-links">
             <Link to="/" className={`drawer-link ${isActive("/") ? "active" : ""}`}>Home</Link>
             <Link to="/compare" className={`drawer-link ${isActive("/compare") ? "active" : ""}`}>Compare</Link>
-            {user && (
-              <Link to="/watchlist" className={`drawer-link ${isActive("/watchlist") ? "active" : ""}`}>Watchlist</Link>
-            )}
+           
+           <Link to="/watchlist" className={`drawer-link ${isActive("/watchlist") ? "active" : ""}`}>Watchlist</Link>
+            
             <Link to="/dashboard" className={`drawer-link ${isActive("/dashboard") ? "active" : ""}`}>Dashboard</Link>
             {!user ? (
               <Link to="/login" className={`drawer-link ${isActive("/login") ? "active" : ""}`}>Login</Link>

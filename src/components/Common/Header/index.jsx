@@ -19,7 +19,7 @@ function Header() {
         </h1>
       </Link>
       
-      {/* Desktop Navigation */}
+      
       <div className="links-desktop">
         <Link to="/">
           <p className={`link ${isActive('/') ? 'active' : ''}`}>Home</p>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getAuth } from "firebase/auth";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../components/Firebase/firebase";
@@ -15,6 +15,7 @@ function WatchlistView() {
   const [coins, setCoins] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchWatchlistData();
@@ -62,7 +63,15 @@ function WatchlistView() {
         {loading ? (
           <Loader />
         ) : error ? (
-          <div className="watchlist-error">{error}</div>
+          <div className="watchlist-error">
+            <h2>{error}</h2>
+            <button
+              className="login-btn"
+              onClick={() => navigate("/login")}
+            >
+              Login
+            </button>
+          </div>
         ) : coins.length === 0 ? (
           <div className="watchlist-empty">
             <h1>Your Watchlist is Empty</h1>
