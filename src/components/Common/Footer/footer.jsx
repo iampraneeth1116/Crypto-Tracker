@@ -21,7 +21,7 @@ function Footer() {
         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
           <FacebookIcon className="social-link" />
         </a>
-        <a href="mailto:iampraneeth1116@gmail.com">
+        <a href="mailto:iampraneeth1116@gmail.com" target="_blank" rel="noopener noreferrer">
           <EmailIcon className="social-link" />
         </a>
         <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
