@@ -39,10 +39,6 @@
   color: var(--white);
 }
 
-.link.active {
-  color: var(--white);
-}
-
 .drawer-component {
   display: none;
 }

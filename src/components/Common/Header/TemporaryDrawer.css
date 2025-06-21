@@ -54,8 +54,7 @@
   transition: all 0.3s ease;
 }
 
-.drawer-link:hover,
-.drawer-link.active {
+.drawer-link:hover{
   color: #64b5f6;
   font-weight: bold;
 }

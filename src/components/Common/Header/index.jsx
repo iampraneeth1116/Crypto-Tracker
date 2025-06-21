@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { useAuth } from '../../../context/AuthContext';
 import Button from "../Button";
 import "./styles.css";
@@ -10,7 +10,6 @@ function Header() {
 
   return (
     <div className="header">
-
       <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
         <h1>
           CryptoTracker<span style={{ color: "var(--blue)" }}>.</span>
@@ -18,27 +17,23 @@ function Header() {
       </Link>
 
       <div className="links-desktop">
-        <Link to="/">
-          <p className="link">Home</p>
-        </Link>
-        <Link to="/compare">
-          <p className="link">Compare</p>
-        </Link>
-        <Link to="/watchlist">
-          <p className="link">Watchlist</p>
-        </Link>
+        <Link to="/"><p className="link">Home</p></Link>
+        <Link to="/compare"><p className="link">Compare</p></Link>
+        <Link to="/watchlist"><p className="link">Watchlist</p></Link>
+
         <Link to="/dashboard">
           <Button text="Dashboard" />
         </Link>
+
         {!user ? (
           <Link to="/login">
-            <Button text="Login" outlined={true} />
+            <Button text="Login" outlined />
           </Link>
         ) : (
           <Link to="/profile">
-            <Button 
-              text={user.displayName?.split(' ')[0] || 'Profile'} 
-              outlined={true}
+            <Button
+              text={user.displayName?.split(' ')[0] || 'Profile'}
+              outlined
             />
           </Link>
         )}
